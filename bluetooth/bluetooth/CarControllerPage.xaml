@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="bluetooth.CarControllerPage">
+    <ContentPage.Content>
+        <Grid x:Name="buttonGrid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100" />
+                <RowDefinition Height="100" />
+                <RowDefinition Height="100" />
+                <RowDefinition Height="100" />
+                <RowDefinition Height="100" />
+                <RowDefinition Height="100" />
+                <RowDefinition Height="100" />
+            </Grid.RowDefinitions>
+            <Button Text="Forward" Grid.Row="0" Grid.Column="1" Pressed="Button_OnPressed" />
+            <Button Text="Backward" Grid.Row="2" Grid.Column="1" Pressed="Button_OnPressed"/>
+            <Button Text="Stop" Grid.Row="1" Grid.Column="1" Pressed="Button_OnPressed"/>
+            <Button Text="Right" Grid.Row="1" Grid.Column="2" Pressed="Button_OnPressed"/>
+            <Button Text="Left" Grid.Row="1" Grid.Column="0" Pressed="Button_OnPressed"/>
+            <Button Text="Open Salter" Grid.Row="3" Grid.Column="1" Pressed="Button_OnPressed"/>
+            <Label Text="Plow Angle" Grid.Row="4" Grid.Column="1" />
+            <Label Text="{Binding Angle}" Grid.Row="5" Grid.Column="1" />
+            <Stepper
+                Minimum="0"
+                Maximum="180"
+                Increment="1"
+                Grid.Row="6"
+                Grid.Column="1"
+                ValueChanged="Stepper_OnValueChanged" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
